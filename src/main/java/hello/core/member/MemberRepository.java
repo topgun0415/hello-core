@@ -6,7 +6,7 @@ public interface MemberRepository {
     void save(Member member);
 
     // find Members' ID
-    Member findId(Long memberId);
+    Member findById(Long memberId);
 
 
 }
