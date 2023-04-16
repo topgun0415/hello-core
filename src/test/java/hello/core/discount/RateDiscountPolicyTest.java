@@ -22,4 +22,15 @@ class RateDiscountPolicyTest {
         //then
         Assertions.assertThat(discount).isEqualTo(1000);
     }
+
+    @Test
+    @DisplayName("BASIC는 할인이 되면안된다.")
+    void basic_o() {
+        //given
+        Member member = new Member(1L, "memberVIP", Grade.BASIC);
+        //when(Error : Any discount should not be made)
+        int discount = discountPolicy.discount(member, 10000);
+        //then
+        Assertions.assertThat(discount).isEqualTo(1000);
+    }
 }
